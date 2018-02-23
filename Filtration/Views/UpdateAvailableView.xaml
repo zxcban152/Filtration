@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:viewModels="clr-namespace:Filtration.ViewModels"
-        Title="Filtration - New Version Available!" Height="300" Width="500" Icon="../Resources/filtration.ico"
+        Title="Filtration - 新版本可用!" Height="300" Width="500" Icon="../Resources/filtration.ico"
         mc:Ignorable="d"  
         d:DataContext="{d:DesignInstance Type=viewModels:UpdateAvailableViewModel}">
     <Grid Margin="10">
@@ -20,19 +20,19 @@
             <ColumnDefinition Width="5" />
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Text="Current Version:" />
+        <TextBlock Grid.Row="0" Text="当前版本:" />
         <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding CurrentVersion}" />
-        <TextBlock Grid.Row="1" Grid.Column="0"  Text="New Version:" />
+        <TextBlock Grid.Row="1" Grid.Column="0"  Text="最新版本:" />
         <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding NewVersion}" />
-        <TextBlock Grid.Row="2" Grid.Column="0"  Text="Release Date:" />
+        <TextBlock Grid.Row="2" Grid.Column="0"  Text="发布日期:" />
         <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding ReleaseDate, StringFormat={}{0:yyyy-MM-dd}}" />
-        <TextBlock Grid.Row="3" Grid.Column="0"  Text="Release Notes:" />
+        <TextBlock Grid.Row="3" Grid.Column="0"  Text="版本说明:" />
         <TextBox MaxHeight="150" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Grid.Row="3" Grid.Column="2" Text="{Binding ReleaseNotes, Mode=OneWay}" TextWrapping="Wrap" />
         
         <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,5">
-            <Button Padding="2"  Margin="0,0,5,0" Command="{Binding DownloadCommand}">Download from Filtration homepage</Button>
-            <Button Padding="2" Margin="0,0,5,0" Command="{Binding AskLaterCommand}">Ask me later</Button>
-            <Button Padding="2" Margin="0,0,5,0" Command="{Binding NeverAskAgainCommand}">Never ask again for this version</Button>
+            <Button Padding="2"  Margin="0,0,5,0" Command="{Binding DownloadCommand}">打开浏览器下载</Button>
+            <Button Padding="2" Margin="0,0,5,0" Command="{Binding AskLaterCommand}">稍后提醒</Button>
+            <Button Padding="2" Margin="0,0,5,0" Command="{Binding NeverAskAgainCommand}">不再提示</Button>
         </StackPanel>
     </Grid>
 </Window>

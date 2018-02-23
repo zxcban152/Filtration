@@ -28,11 +28,11 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0">Default Filter Directory:</TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="0">默认过滤目录：</TextBlock>
                     <TextBox Grid.Row="0" Grid.Column="2" Text="{Binding DefaultFilterDirectory}" Width="250" />
-                    <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">Add blank line between blocks when saving</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">单条过滤间自动空行</TextBlock>
                     <CheckBox Grid.Row="2" Grid.Column="2" IsChecked="{Binding ExtraLineBetweenBlocks}"  />
-                    <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center">Suppress update notifications for current version</TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center">取消更新提示</TextBlock>
                     <CheckBox Grid.Row="4" Grid.Column="2" IsChecked="{Binding SuppressUpdateNotifications}"  />
                 </Grid>
                 <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
@@ -42,7 +42,7 @@
                             <Setter Property="Margin" Value="3" />
                         </Style>
                     </StackPanel.Resources>
-                    <Button Command="{Binding SaveCommand}">Save</Button>
+                    <Button Command="{Binding SaveCommand}">保存设置</Button>
                 </StackPanel>
             </Grid>
         </DockPanel>

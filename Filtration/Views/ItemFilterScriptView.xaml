@@ -44,7 +44,7 @@
             <StackPanel Margin="2,2,2,2">
                 <Expander Style="{StaticResource ExpanderRightAlignStyle}">
                     <Expander.Header>
-                        <TextBlock Text="Script Description" VerticalAlignment="Center" />
+                        <TextBlock Text="过滤源码" VerticalAlignment="Center" />
                     </Expander.Header>
                     <Grid>
                         <TextBox Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" Margin="5" MaxLines="20" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" />

@@ -30,7 +30,7 @@
             <fluent:Ribbon.Menu>
                 <fluent:Backstage>
                     <fluent:BackstageTabControl>
-                        <fluent:BackstageTabItem Header="Filtration" Content="{StaticResource SettingsIcon}">
+                        <fluent:BackstageTabItem Header="Filtration 汉化" Content="{StaticResource SettingsIcon}">
                             <fluent:BackstageTabItem.ContentTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -39,14 +39,14 @@
                                 </DataTemplate>
                             </fluent:BackstageTabItem.ContentTemplate>
                         </fluent:BackstageTabItem>
-                        <fluent:Button Header="New Script" Command="{Binding NewScriptCommand}" Icon="{StaticResource NewIcon}" ToolTip="New Script (Ctrl+N)" />
-                        <fluent:Button Header="Open Script" Command="{Binding OpenScriptCommand}" Icon="{StaticResource OpenIcon}" ToolTip="Open Script (Ctrl+O)" />
-                        <fluent:Button Header="Open Theme" Command="{Binding OpenThemeCommand}" Icon="{StaticResource OpenIcon}" />
-                        <fluent:Button Header="Save" Command="{Binding SaveCommand}" Icon="{StaticResource SaveIcon}" ToolTip="Save (Ctrl+S)" />
-                        <fluent:Button Header="Save As" Command="{Binding SaveAsCommand}" Icon="{StaticResource SaveIcon}" />
-                        <fluent:Button Header="Close" Command="{Binding CloseCommand}" />
+                        <fluent:Button Header="新建 过滤" Command="{Binding NewScriptCommand}" Icon="{StaticResource NewIcon}" ToolTip="New Script (Ctrl+N)" />
+                        <fluent:Button Header="打开 过滤" Command="{Binding OpenScriptCommand}" Icon="{StaticResource OpenIcon}" ToolTip="Open Script (Ctrl+O)" />
+                        <fluent:Button Header="打开 过滤样式" Command="{Binding OpenThemeCommand}" Icon="{StaticResource OpenIcon}" />
+                        <fluent:Button Header="保存" Command="{Binding SaveCommand}" Icon="{StaticResource SaveIcon}" ToolTip="Save (Ctrl+S)" />
+                        <fluent:Button Header="另存为" Command="{Binding SaveAsCommand}" Icon="{StaticResource SaveIcon}" />
+                        <fluent:Button Header="退出" Command="{Binding CloseCommand}" />
                         <fluent:SeparatorTabItem />
-                        <fluent:BackstageTabItem Header="Settings" Content="{StaticResource SettingsIcon}">
+                        <fluent:BackstageTabItem Header="设置" Content="{StaticResource SettingsIcon}">
                             <fluent:BackstageTabItem.ContentTemplate>
                                 <DataTemplate>
                                     <views:SettingsPageView DataContext="{Binding ElementName=RootDockPanel, Path=DataContext.SettingsPageViewModel}" />
@@ -54,77 +54,77 @@
                             </fluent:BackstageTabItem.ContentTemplate>
                         </fluent:BackstageTabItem>
                         <fluent:SeparatorTabItem />
-                        <fluent:Button Header="About Filtration" Icon="{StaticResource AboutIcon}" Command="{Binding OpenAboutWindowCommand}" VerticalAlignment="Bottom" />
+                        <fluent:Button Header="关于Filtration" Icon="{StaticResource AboutIcon}" Command="{Binding OpenAboutWindowCommand}" VerticalAlignment="Bottom" />
                     </fluent:BackstageTabControl>
                 </fluent:Backstage>
             </fluent:Ribbon.Menu>
             <fluent:Ribbon.ContextualGroups>
-                <fluent:RibbonContextualTabGroup Header="Script"
+                <fluent:RibbonContextualTabGroup Header="过滤编辑"
                                                  Background="ForestGreen"
                                                  BorderBrush="ForestGreen"
                                                  x:Name="ScriptToolsGroup"
                                                  IsVisibleChanged="ScriptToolsGroup_OnIsVisibleChanged"  
                                                  Visibility="{Binding ActiveDocumentIsScript, Converter={StaticResource BooleanVisibilityConverter}, Mode=OneWay}" />
-                <fluent:RibbonContextualTabGroup Header="Theme"
+                <fluent:RibbonContextualTabGroup Header="样式"
                                                  Background="DodgerBlue"
                                                  BorderBrush="DodgerBlue"
                                                  x:Name="ThemeToolsGroup" 
                                                  IsVisibleChanged="ThemeToolsGroup_OnIsVisibleChanged"
                                                  Visibility="{Binding ActiveDocumentIsTheme, Converter={StaticResource BooleanVisibilityConverter}, Mode=OneWay}" />
             </fluent:Ribbon.ContextualGroups>
-            <fluent:RibbonTabItem Header="View">
-                <fluent:RibbonGroupBox Header="Tools">
-                    <fluent:ToggleButton Header="Section Browser" Width="150" Size="Middle" Icon="{StaticResource AddSectionIcon}" IsChecked="{Binding AvalonDockWorkspaceViewModel.CommentBlockBrowserViewModel.IsVisible}"/>
-                    <fluent:ToggleButton Header="Block Group Browser" SizeDefinition="Middle" Icon="{StaticResource BlockGroupBrowserIcon}" IsChecked="{Binding AvalonDockWorkspaceViewModel.BlockGroupBrowserViewModel.IsVisible}" />
-                    <fluent:ToggleButton Header="Block Output Preview" SizeDefinition="Middle" Icon="{StaticResource BlockOutputPreviewIcon}" IsChecked="{Binding AvalonDockWorkspaceViewModel.BlockOutputPreviewViewModel.IsVisible}" />
+            <fluent:RibbonTabItem Header="视图">
+                <fluent:RibbonGroupBox Header="视图工具">
+                    <fluent:ToggleButton Header="注释目录视图" Width="150" Size="Middle" Icon="{StaticResource AddSectionIcon}" IsChecked="{Binding AvalonDockWorkspaceViewModel.CommentBlockBrowserViewModel.IsVisible}"/>
+                    <fluent:ToggleButton Header="分组管理视图" SizeDefinition="Middle" Icon="{StaticResource BlockGroupBrowserIcon}" IsChecked="{Binding AvalonDockWorkspaceViewModel.BlockGroupBrowserViewModel.IsVisible}" />
+                    <fluent:ToggleButton Header="源码显示视图" SizeDefinition="Middle" Icon="{StaticResource BlockOutputPreviewIcon}" IsChecked="{Binding AvalonDockWorkspaceViewModel.BlockOutputPreviewViewModel.IsVisible}" />
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
-            <fluent:RibbonTabItem x:Name="ScriptToolsTabItem" Header="Script Tools" Group="{Binding ElementName=ScriptToolsGroup}" Visibility="{Binding ActiveDocumentIsScript, Converter={StaticResource BooleanVisibilityConverter}, Mode=OneWay}" >
-                <fluent:RibbonGroupBox Header="Clipboard">
-                    <fluent:Button Header="Copy Block" Command="{Binding CopyBlockCommand}" Icon="{StaticResource CopyIcon}" LargeIcon="{StaticResource CopyIcon}" ToolTip="Copy Block (Ctrl+C)"/>
-                    <fluent:Button Header="Paste Block" Command="{Binding PasteCommand}" Icon="{StaticResource PasteIcon}" LargeIcon="{StaticResource PasteIcon}" ToolTip="Paste Block (Ctrl+V)"/>
-                    <fluent:Button Header="Copy Style" Command="{Binding CopyBlockStyleCommand}" Icon="{StaticResource CopyIcon}" LargeIcon="{StaticResource CopyIcon}" SizeDefinition="Middle" ToolTip="Copy Style (Ctrl+Shift+C)" />
-                    <fluent:Button Header="Paste Style" Command="{Binding PasteBlockStyleCommand}" Icon="{StaticResource PasteStyleIcon}" LargeIcon="{StaticResource PasteIcon}" SizeDefinition="Middle" ToolTip="Paste Style (Ctrl+Shift+V)" />
-                    <fluent:Button Header="Copy Script" Command="{Binding CopyScriptCommand}" Icon="{StaticResource CopyIcon}" LargeIcon="{StaticResource PasteIcon}" SizeDefinition="Middle" />
+            <fluent:RibbonTabItem x:Name="ScriptToolsTabItem" Header="工具栏" Group="{Binding ElementName=ScriptToolsGroup}" Visibility="{Binding ActiveDocumentIsScript, Converter={StaticResource BooleanVisibilityConverter}, Mode=OneWay}" >
+                <fluent:RibbonGroupBox Header="剪贴板">
+                    <fluent:Button Header="复制单条过滤" Command="{Binding CopyBlockCommand}" Icon="{StaticResource CopyIcon}" LargeIcon="{StaticResource CopyIcon}" ToolTip="Copy Block (Ctrl+C)"/>
+                    <fluent:Button Header="粘贴单条过滤" Command="{Binding PasteCommand}" Icon="{StaticResource PasteIcon}" LargeIcon="{StaticResource PasteIcon}" ToolTip="Paste Block (Ctrl+V)"/>
+                    <fluent:Button Header="复制样式" Command="{Binding CopyBlockStyleCommand}" Icon="{StaticResource CopyIcon}" LargeIcon="{StaticResource CopyIcon}" SizeDefinition="Middle" ToolTip="Copy Style (Ctrl+Shift+C)" />
+                    <fluent:Button Header="粘贴样式" Command="{Binding PasteBlockStyleCommand}" Icon="{StaticResource PasteStyleIcon}" LargeIcon="{StaticResource PasteIcon}" SizeDefinition="Middle" ToolTip="Paste Style (Ctrl+Shift+V)" />
+                    <fluent:Button Header="粘贴整份过滤" Command="{Binding CopyScriptCommand}" Icon="{StaticResource CopyIcon}" LargeIcon="{StaticResource PasteIcon}" SizeDefinition="Middle" />
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="Undo">
-                    <fluent:Button Header="Undo" Command="{Binding UndoCommand}"  ToolTip="Undo" SizeDefinition="Middle" Icon="{StaticResource UndoIcon}" />
-                    <fluent:Button Header="Redo" Command="{Binding RedoCommand}" ToolTip="Redo" SizeDefinition="Middle" Icon="{StaticResource RedoIcon}" />
+                <fluent:RibbonGroupBox Header="撤销工具">
+                    <fluent:Button Header="撤销" Command="{Binding UndoCommand}"  ToolTip="Undo" SizeDefinition="Middle" Icon="{StaticResource UndoIcon}" />
+                    <fluent:Button Header="重做" Command="{Binding RedoCommand}" ToolTip="Redo" SizeDefinition="Middle" Icon="{StaticResource RedoIcon}" />
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="Blocks">
-                    <fluent:Button Header="Add Block" Command="{Binding AddBlockCommand}" SizeDefinition="Middle" Icon="{StaticResource AddBlockIcon}" />
-                    <fluent:Button Header="Add Section" Command="{Binding AddSectionCommand}" SizeDefinition="Middle" Icon="{StaticResource AddSectionIcon}" />
-                    <fluent:Button Header="Delete Block" Command="{Binding DeleteBlockCommand}"  SizeDefinition="Middle" Icon="{StaticResource DeleteIcon}" />
-                    <fluent:Button Header="Move To Top" Command="{Binding MoveBlockToTopCommand}" SizeDefinition="Middle" Icon="{StaticResource MoveToTopIcon}" />
-                    <fluent:Button Header="Move Up" Command="{Binding MoveBlockUpCommand}"  SizeDefinition="Middle" Icon="{StaticResource MoveUpIcon}" />
-                    <fluent:Button Header="Move Down" Command="{Binding MoveBlockDownCommand}" SizeDefinition="Middle" Icon="{StaticResource MoveDownIcon}" />
-                    <fluent:Button Header="Move To Bottom" Command="{Binding MoveBlockToBottomCommand}"  SizeDefinition="Middle" Icon="{StaticResource MoveToBottomIcon}" />
-                    <fluent:Button Header="Enable Block" Command="{Binding EnableBlockCommand}"  SizeDefinition="Middle" Icon="{StaticResource StandbyEnabledIcon}" />
-                    <fluent:Button Header="Disable Block" Command="{Binding DisableBlockCommand}"  SizeDefinition="Middle" Icon="{StaticResource StandbyDisabledIcon}" />
+                <fluent:RibbonGroupBox Header="单条过滤工具">
+                    <fluent:Button Header="添加 过滤" Command="{Binding AddBlockCommand}" SizeDefinition="Middle" Icon="{StaticResource AddBlockIcon}" />
+                    <fluent:Button Header="添加 注释" Command="{Binding AddSectionCommand}" SizeDefinition="Middle" Icon="{StaticResource AddSectionIcon}" />
+                    <fluent:Button Header="删除 过滤" Command="{Binding DeleteBlockCommand}"  SizeDefinition="Middle" Icon="{StaticResource DeleteIcon}" />
+                    <fluent:Button Header="移到最前" Command="{Binding MoveBlockToTopCommand}" SizeDefinition="Middle" Icon="{StaticResource MoveToTopIcon}" />
+                    <fluent:Button Header="上移" Command="{Binding MoveBlockUpCommand}"  SizeDefinition="Middle" Icon="{StaticResource MoveUpIcon}" />
+                    <fluent:Button Header="下移" Command="{Binding MoveBlockDownCommand}" SizeDefinition="Middle" Icon="{StaticResource MoveDownIcon}" />
+                    <fluent:Button Header="移到最后" Command="{Binding MoveBlockToBottomCommand}"  SizeDefinition="Middle" Icon="{StaticResource MoveToBottomIcon}" />
+                    <fluent:Button Header="启用此条" Command="{Binding EnableBlockCommand}"  SizeDefinition="Middle" Icon="{StaticResource StandbyEnabledIcon}" />
+                    <fluent:Button Header="禁用此条" Command="{Binding DisableBlockCommand}"  SizeDefinition="Middle" Icon="{StaticResource StandbyDisabledIcon}" />
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="Expand / Collapse">
-                    <fluent:Button Header="Expand All" Command="{Binding ExpandAllBlocksCommand}" SizeDefinition="Middle" Icon="{StaticResource ExpandIcon}" />
-                    <fluent:Button Header="Collapse All" Command="{Binding CollapseAllBlocksCommand}" SizeDefinition="Middle" Icon="{StaticResource CollapseIcon}" />
+                <fluent:RibbonGroupBox Header="展开/折叠">
+                    <fluent:Button Header="全部展开" Command="{Binding ExpandAllBlocksCommand}" SizeDefinition="Middle" Icon="{StaticResource ExpandIcon}" />
+                    <fluent:Button Header="全部折叠" Command="{Binding CollapseAllBlocksCommand}" SizeDefinition="Middle" Icon="{StaticResource CollapseIcon}" />
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="Filters">
-                    <fluent:ToggleButton Command="{Binding ToggleShowAdvancedCommand}" CommandParameter="{Binding Path=IsChecked, RelativeSource={RelativeSource Self}}" Header="Show Advanced Blocks" SizeDefinition="Middle" Icon="{StaticResource ShowAdvancedIcon}" IsChecked="{Binding ShowAdvancedStatus, Mode=OneWay}" />
-                    <fluent:Button Header="Clear All Filters" Command="{Binding ClearFiltersCommand}" SizeDefinition="Middle" Icon="{StaticResource ClearFilterIcon}" />
+                <fluent:RibbonGroupBox Header="检测工具">
+                    <fluent:ToggleButton Command="{Binding ToggleShowAdvancedCommand}" CommandParameter="{Binding Path=IsChecked, RelativeSource={RelativeSource Self}}" Header="显示过期过滤" SizeDefinition="Middle" Icon="{StaticResource ShowAdvancedIcon}" IsChecked="{Binding ShowAdvancedStatus, Mode=OneWay}" />
+                    <fluent:Button Header="清理过滤" Command="{Binding ClearFiltersCommand}" SizeDefinition="Middle" Icon="{StaticResource ClearFilterIcon}" />
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="Themes">
-                    <fluent:Button Header="Edit Master Theme" Command="{Binding EditMasterThemeCommand}" Icon="{StaticResource ThemeIcon}" LargeIcon="{StaticResource ThemeIcon}" />
-                    <fluent:Button Header="Apply Theme" Command="{Binding ApplyThemeToScriptCommand}" Icon="{StaticResource ThemeIcon}" LargeIcon="{StaticResource ThemeIcon}" />
-                    <fluent:Button Header="Create Theme" Command="{Binding CreateThemeCommand}" Icon="{StaticResource ThemeIcon}" LargeIcon="{StaticResource ThemeIcon}" />
-                    <fluent:Button Header="Replace Colours" Command="{Binding ReplaceColorsCommand}" Icon="{StaticResource ReplaceColorsIcon}" LargeIcon="{StaticResource ReplaceColorsIcon}" />
+                <fluent:RibbonGroupBox Header="样式工具">
+                    <fluent:Button Header="编辑样式" Command="{Binding EditMasterThemeCommand}" Icon="{StaticResource ThemeIcon}" LargeIcon="{StaticResource ThemeIcon}" />
+                    <fluent:Button Header="应用样式" Command="{Binding ApplyThemeToScriptCommand}" Icon="{StaticResource ThemeIcon}" LargeIcon="{StaticResource ThemeIcon}" />
+                    <fluent:Button Header="创建样式" Command="{Binding CreateThemeCommand}" Icon="{StaticResource ThemeIcon}" LargeIcon="{StaticResource ThemeIcon}" />
+                    <fluent:Button Header="替换颜色" Command="{Binding ReplaceColorsCommand}" Icon="{StaticResource ReplaceColorsIcon}" LargeIcon="{StaticResource ReplaceColorsIcon}" />
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
-            <fluent:RibbonTabItem x:Name="ThemeToolsTabItem" Header="Theme Tools" Group="{Binding ElementName=ThemeToolsGroup}" Visibility="{Binding ActiveDocumentIsTheme, Converter={StaticResource BooleanVisibilityConverter}, Mode=OneWay}">
+            <fluent:RibbonTabItem x:Name="ThemeToolsTabItem" Header="样式工具" Group="{Binding ElementName=ThemeToolsGroup}" Visibility="{Binding ActiveDocumentIsTheme, Converter={StaticResource BooleanVisibilityConverter}, Mode=OneWay}">
                 <fluent:RibbonGroupBox Header="Add Components">
-                    <fluent:Button SizeDefinition="Middle" Header="Add Text Color" Icon="{StaticResource AddIcon}" Command="{Binding AddTextColorThemeComponentCommand}" />
-                    <fluent:Button SizeDefinition="Middle" Header="Add Background Color" Icon="{StaticResource AddIcon}" Command="{Binding AddBackgroundColorThemeComponentCommand}" />
-                    <fluent:Button SizeDefinition="Middle" Header="Add Border Color" Icon="{StaticResource AddIcon}" Command="{Binding AddBorderColorThemeComponentCommand}" />
+                    <fluent:Button SizeDefinition="Middle" Header="添加文字颜色" Icon="{StaticResource AddIcon}" Command="{Binding AddTextColorThemeComponentCommand}" />
+                    <fluent:Button SizeDefinition="Middle" Header="添加背景颜色" Icon="{StaticResource AddIcon}" Command="{Binding AddBackgroundColorThemeComponentCommand}" />
+                    <fluent:Button SizeDefinition="Middle" Header="添加边框颜色" Icon="{StaticResource AddIcon}" Command="{Binding AddBorderColorThemeComponentCommand}" />
                 </fluent:RibbonGroupBox>
-                <fluent:RibbonGroupBox Header="Delete">
-                    <fluent:Button Header="Delete Theme Component" Icon="{StaticResource ThemeComponentDeleteIcon}" LargeIcon="{StaticResource ThemeComponentDeleteIcon}" Command="{Binding DeleteThemeComponentCommand}" />
+                <fluent:RibbonGroupBox Header="删除工具">
+                    <fluent:Button Header="删除样式" Icon="{StaticResource ThemeComponentDeleteIcon}" LargeIcon="{StaticResource ThemeComponentDeleteIcon}" Command="{Binding DeleteThemeComponentCommand}" />
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
         </fluent:Ribbon>

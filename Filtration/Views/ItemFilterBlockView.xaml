@@ -54,7 +54,7 @@
                 </Grid.ColumnDefinitions>
                 <Rectangle Width="7" Fill="{Binding AdvancedBlockGroup, Converter={StaticResource BlockGroupAdvancedFillColorConverter}}">
                     <Rectangle.ToolTip>
-                        <ToolTip Visibility="{Binding AdvancedBlockGroup, Converter={StaticResource BooleanVisibilityConverter}}">Advanced Block Group</ToolTip>
+                        <ToolTip Visibility="{Binding AdvancedBlockGroup, Converter={StaticResource BooleanVisibilityConverter}}">过期过滤</ToolTip>
                     </Rectangle.ToolTip>
                 </Rectangle>
                 <Expander Grid.Column="1"
@@ -67,24 +67,24 @@
                     <Expander.ContextMenu>
                         <ContextMenu>
                             <ContextMenu.Items>
-                                <MenuItem Header="Copy Block" Command="{Binding CopyBlockCommand}" Icon="{StaticResource CopyIcon}" />
-                                <MenuItem Header="Paste Block" Command="{Binding PasteBlockCommand}" Icon="{StaticResource PasteIcon}" />
+                                <MenuItem Header="复制单条过滤" Command="{Binding CopyBlockCommand}" Icon="{StaticResource CopyIcon}" />
+                                <MenuItem Header="粘贴单条过滤" Command="{Binding PasteBlockCommand}" Icon="{StaticResource PasteIcon}" />
                                 <Separator />
-                                <MenuItem Header="Block Style">
-                                    <MenuItem Header="Copy Block Style" Command="{Binding CopyBlockStyleCommand}" Icon="{StaticResource CopyIcon}" />
-                                    <MenuItem Header="Paste Block Style" Command="{Binding PasteBlockStyleCommand}" Icon="{StaticResource PasteIcon}" />
+                                <MenuItem Header="过滤样式">
+                                    <MenuItem Header="复制过滤样式" Command="{Binding CopyBlockStyleCommand}" Icon="{StaticResource CopyIcon}" />
+                                    <MenuItem Header="粘贴过滤样式" Command="{Binding PasteBlockStyleCommand}" Icon="{StaticResource PasteIcon}" />
                                 </MenuItem>
-                                <MenuItem Header="Add Block" Command="{Binding Data.AddBlockCommand, Source={StaticResource Proxy}}" Icon="{StaticResource AddBlockIcon}" />
-                                <MenuItem Header="Add Section" Command="{Binding Data.AddSectionCommand, Source={StaticResource Proxy}}" Icon="{StaticResource AddSectionIcon}" />
+                                <MenuItem Header="添加过滤" Command="{Binding Data.AddBlockCommand, Source={StaticResource Proxy}}" Icon="{StaticResource AddBlockIcon}" />
+                                <MenuItem Header="添加注释" Command="{Binding Data.AddSectionCommand, Source={StaticResource Proxy}}" Icon="{StaticResource AddSectionIcon}" />
                                 <Separator />
-                                <MenuItem Header="Delete Block" Command="{Binding Data.DeleteBlockCommand, Source={StaticResource Proxy}}" Icon="{StaticResource DeleteIcon}" />
+                                <MenuItem Header="删除过滤" Command="{Binding Data.DeleteBlockCommand, Source={StaticResource Proxy}}" Icon="{StaticResource DeleteIcon}" />
                                 <Separator />
-                                <MenuItem Header="Move Block To Top" Command="{Binding Data.MoveBlockToTopCommand, Source={StaticResource Proxy}}" Icon="{StaticResource MoveToTopIcon}" />
-                                <MenuItem Header="Move Block Up" Command="{Binding Data.MoveBlockUpCommand, Source={StaticResource Proxy}}" Icon="{StaticResource MoveUpIcon}" />
-                                <MenuItem Header="Move Block Down" Command="{Binding Data.MoveBlockDownCommand, Source={StaticResource Proxy}}" Icon="{StaticResource MoveDownIcon}" />
-                                <MenuItem Header="Move Block To Bottom" Command="{Binding Data.MoveBlockToBottomCommand, Source={StaticResource Proxy}}" Icon="{StaticResource MoveToBottomIcon}" />
+                                <MenuItem Header="移到最前" Command="{Binding Data.MoveBlockToTopCommand, Source={StaticResource Proxy}}" Icon="{StaticResource MoveToTopIcon}" />
+                                <MenuItem Header="上移" Command="{Binding Data.MoveBlockUpCommand, Source={StaticResource Proxy}}" Icon="{StaticResource MoveUpIcon}" />
+                                <MenuItem Header="下移" Command="{Binding Data.MoveBlockDownCommand, Source={StaticResource Proxy}}" Icon="{StaticResource MoveDownIcon}" />
+                                <MenuItem Header="移到最后" Command="{Binding Data.MoveBlockToBottomCommand, Source={StaticResource Proxy}}" Icon="{StaticResource MoveToBottomIcon}" />
                                 <Separator />
-                                <MenuItem Header="Replace Colors" Command="{Binding Data.ReplaceColorsCommand, Source={StaticResource Proxy}}" Icon="{StaticResource ReplaceColorsIcon}" />
+                                <MenuItem Header="替换颜色" Command="{Binding Data.ReplaceColorsCommand, Source={StaticResource Proxy}}" Icon="{StaticResource ReplaceColorsIcon}" />
                             </ContextMenu.Items>
                         </ContextMenu>
                     </Expander.ContextMenu>
@@ -138,7 +138,7 @@
                                         Visibility="{Binding HasSound, Converter={StaticResource BooleanVisibilityConverter}}"
                                         Background="Transparent"
                                         BorderBrush="Transparent"
-                                        ToolTip="Click to preview drop sound">
+                                        ToolTip="点击试听">
                                     <Image Source="/Filtration;component/Resources/Icons/speaker_icon.png"  VerticalAlignment="Center" HorizontalAlignment="Center" />
                                 </Button>
                                 <Button Command="{Binding PlayPositionalSoundCommand}"
@@ -150,14 +150,14 @@
                                         Visibility="{Binding HasPositionalSound, Converter={StaticResource BooleanVisibilityConverter}}"
                                         Background="Transparent"
                                         BorderBrush="Transparent"
-                                        ToolTip="Click to preview drop sound">
+                                        ToolTip="点击试听">
                                     <Image Source="/Filtration;component/Resources/Icons/speaker_icon.png"  VerticalAlignment="Center" HorizontalAlignment="Center" />
                                 </Button>
                                 <ToggleButton Margin="0,2,2,2"
                                               Style="{StaticResource ChromelessToggleButton}"
                                               x:Name="ItemPreviewButton"
                                               IsChecked="{Binding AudioVisualBlockItemsGridVisible}"
-                                              ToolTip="Click here to change color and font settings" Cursor="Hand" >
+                                              ToolTip="点击修改字体样式" Cursor="Hand" >
                                     <userControls:ItemPreviewControl TextColor="{Binding DisplayTextColor}"
                                                                      BackgroundColor="{Binding DisplayBackgroundColor}"
                                                                      BorderColor="{Binding DisplayBorderColor}"
@@ -211,7 +211,7 @@
                                           Style="{StaticResource ChromelessToggleButton}" 
                                           IsChecked="{Binding BlockEnabled}"
                                           Margin="0,0,5,0"
-                                          ToolTip="Enable/Disable Block"
+                                          ToolTip="展开/折叠过滤"
                                           Cursor="Hand"
                                           Width="25"
                                           Height="25">

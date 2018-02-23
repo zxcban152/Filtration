@@ -15,7 +15,7 @@ namespace Filtration.ViewModels
 
         public StartPageViewModel()
         {
-            Title = "Start Page";
+            Title = "欢迎页面";
             OpenScriptCommand = new RelayCommand(OnOpenScriptCommand);
             NewScriptCommand = new RelayCommand(OnNewScriptCommand);
         }

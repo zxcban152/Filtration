@@ -2,7 +2,7 @@
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:extensions="clr-namespace:Filtration.Extensions"
-                      Title="About Filtration"
+                      Title="关于 Filtration"
                       Height="360"
                       Width="580"
                       Loaded="AboutWindow_OnLoaded"
@@ -30,12 +30,12 @@
             </Grid.RowDefinitions>
             <Image Source="/Filtration;component/Resources/logo.png" Width="75" Height="75" VerticalAlignment="Top" />
             <StackPanel Grid.Row="0" Grid.Column="1">
-                <TextBlock FontWeight="Black">Filtration</TextBlock>
+                <TextBlock FontWeight="Black">Filtration汉化</TextBlock>
                 <TextBlock Text="{Binding Version}" />
                 <TextBlock>Copyright © 2017</TextBlock>
-                <TextBlock>Created by Ben Wallis</TextBlock>
+                <TextBlock>Created by Ben Wallis to CN by FlyX</TextBlock>
                 <TextBlock>
-                    <Hyperlink NavigateUri="https://github.com/ben-wallis/Filtration/" extensions:HyperlinkExtensions.IsExternal="True">https://github.com/ben-wallis/Filtration/</Hyperlink>
+                    <Hyperlink NavigateUri="汉化地址https://github.com/zxcban152/Filtration" extensions:HyperlinkExtensions.IsExternal="True">https://github.com/ben-wallis/Filtration/</Hyperlink>
                     <LineBreak />
                 </TextBlock>
             </StackPanel>
@@ -48,7 +48,8 @@
             <StackPanel>
                 <TextBlock FontWeight="Bold">Contact</TextBlock>
                 <TextBlock TextWrapping="Wrap">IRC: irc.freenode.net #filtration</TextBlock>
-                <TextBlock TextWrapping="Wrap">E-mail: ben-wallis@users.noreply.github.com</TextBlock>
+                <TextBlock TextWrapping="Wrap">作者E-mail: ben-wallis@users.noreply.github.com</TextBlock>
+                <TextBlock TextWrapping="Wrap">汉化E-mail: zxcban152@163.com</TextBlock>
                 <TextBlock TextWrapping="Wrap">In-Game: AtomYcX</TextBlock>
             </StackPanel>
             <StackPanel>

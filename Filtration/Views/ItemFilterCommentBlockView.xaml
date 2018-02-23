@@ -50,18 +50,18 @@
         <Grid.ContextMenu>
             <ContextMenu>
                 <ContextMenu.Items>
-                    <MenuItem Header="Copy Block" Command="{Binding CopyBlockCommand}" Icon="{StaticResource CopyIcon}" />
-                    <MenuItem Header="Paste Block" Command="{Binding PasteBlockCommand}" Icon="{StaticResource PasteIcon}" />
+                    <MenuItem Header="复制单条过滤" Command="{Binding CopyBlockCommand}" Icon="{StaticResource CopyIcon}" />
+                    <MenuItem Header="粘贴单条过滤" Command="{Binding PasteBlockCommand}" Icon="{StaticResource PasteIcon}" />
                     <Separator />
-                    <MenuItem Header="Add Block" Command="{Binding AddBlockCommand}" Icon="{StaticResource AddBlockIcon}" />
-                    <MenuItem Header="Add Section" Command="{Binding AddSectionCommand}" Icon="{StaticResource AddSectionIcon}" />
+                    <MenuItem Header="添加过滤" Command="{Binding AddBlockCommand}" Icon="{StaticResource AddBlockIcon}" />
+                    <MenuItem Header="添加注释" Command="{Binding AddSectionCommand}" Icon="{StaticResource AddSectionIcon}" />
                     <Separator />
-                    <MenuItem Header="Delete Section" Command="{Binding DeleteBlockCommand}" Icon="{StaticResource DeleteIcon}" />
+                    <MenuItem Header="删除注释" Command="{Binding DeleteBlockCommand}" Icon="{StaticResource DeleteIcon}" />
                     <Separator />
-                    <MenuItem Header="Move Section To Top" Command="{Binding MoveBlockToTopCommand}" Icon="{StaticResource MoveToTopIcon}" />
-                    <MenuItem Header="Move Section Up" Command="{Binding MoveBlockUpCommand}" Icon="{StaticResource MoveUpIcon}" />
-                    <MenuItem Header="Move Section Down" Command="{Binding MoveBlockDownCommand}" Icon="{StaticResource MoveDownIcon}" />
-                    <MenuItem Header="Move Section To Bottom" Command="{Binding MoveBlockToBottomCommand}" Icon="{StaticResource MoveToBottomIcon}" />
+                    <MenuItem Header="移到最前" Command="{Binding MoveBlockToTopCommand}" Icon="{StaticResource MoveToTopIcon}" />
+                    <MenuItem Header="上移" Command="{Binding MoveBlockUpCommand}" Icon="{StaticResource MoveUpIcon}" />
+                    <MenuItem Header="下移" Command="{Binding MoveBlockDownCommand}" Icon="{StaticResource MoveDownIcon}" />
+                    <MenuItem Header="移到最后" Command="{Binding MoveBlockToBottomCommand}" Icon="{StaticResource MoveToBottomIcon}" />
                 </ContextMenu.Items>
             </ContextMenu>
         </Grid.ContextMenu>
