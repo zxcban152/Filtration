@@ -33,14 +33,14 @@
         <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Center">文字颜色替换前</TextBlock>
         <xctk:ColorPicker Grid.Row="0" Grid.Column="4" SelectedColor="{Binding ReplaceColorsParameterSet.OldTextColor}" AvailableColors="{Binding AvailableColors}" ShowAvailableColors="True" AvailableColorsHeader="POE原设定色" />
         <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Center">文字颜色替换后</TextBlock>
-        <xctk:ColorPicker Grid.Row="1" Grid.Column="4" SelectedColor="{Binding NewTextColor}" AvailableColors="{Binding AvailableColors}" ShowAvailableColors="True" AvailableColorsHeader="Path of Exile Colors" />
+        <xctk:ColorPicker Grid.Row="1" Grid.Column="4" SelectedColor="{Binding NewTextColor}" AvailableColors="{Binding AvailableColors}" ShowAvailableColors="True" AvailableColorsHeader="POE原设定色" />
 
 
         <CheckBox Grid.Row="2" Grid.Column="0" Content="替换背景颜色" IsChecked="{Binding ReplaceBackgroundColor}" />
         <TextBlock Grid.Row="2" Grid.Column="2" VerticalAlignment="Center">背景颜色替换前</TextBlock>
         <xctk:ColorPicker Grid.Row="2" Grid.Column="4" SelectedColor="{Binding ReplaceColorsParameterSet.OldBackgroundColor}" AvailableColors="{Binding AvailableColors}" ShowAvailableColors="True" AvailableColorsHeader="POE原设定色" />
         <TextBlock Grid.Row="3" Grid.Column="2" VerticalAlignment="Center">背景颜色替换后</TextBlock>
-        <xctk:ColorPicker Grid.Row="3" Grid.Column="4" SelectedColor="{Binding NewBackgroundColor}" AvailableColors="{Binding AvailableColors}" ShowAvailableColors="True" AvailableColorsHeader="Path of Exile Colors" />
+        <xctk:ColorPicker Grid.Row="3" Grid.Column="4" SelectedColor="{Binding NewBackgroundColor}" AvailableColors="{Binding AvailableColors}" ShowAvailableColors="True" AvailableColorsHeader="POE原设定色" />
 
         <CheckBox Grid.Row="4" Grid.Column="0" Content="替换边框颜色" IsChecked="{Binding ReplaceBorderColor}" />
         <TextBlock Grid.Row="4" Grid.Column="2" VerticalAlignment="Center">边框颜色替换前</TextBlock>

@@ -73,7 +73,7 @@
         </ComboBox>
         <userControls:CrossButton Grid.Column="1" Height="12" Command="{Binding RemoveThemeComponentCommand}" VerticalAlignment="Top" Visibility="{Binding ShowThemeComponentComboBox, Converter={StaticResource BooleanToVisibilityConverter}}"  />
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Visibility="{Binding ShowThemeComponentComboBox, Converter={StaticResource InverseBooleanVisibilityConverter}}" VerticalAlignment="Center">
-            <Hyperlink Command="{Binding AddThemeComponentCommand}">Add Theme Tag</Hyperlink>
+            <Hyperlink Command="{Binding AddThemeComponentCommand}">从样式标签添加样式</Hyperlink>
         </TextBlock>
     </Grid>
 </UserControl>

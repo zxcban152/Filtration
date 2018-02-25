@@ -21,15 +21,15 @@ namespace Filtration.ThemeEditor.Converters
             {
                 case "Text":
                 {
-                    return "Text Color Theme Components";
+                    return "文字样式";
                 }
                 case "Border":
                 {
-                    return "Border Color Theme Components";
+                    return "边框样式";
                 }
                 case "Background":
                 {
-                    return "Background Color Theme Components";
+                    return "背景样式";
                 }
             }
 

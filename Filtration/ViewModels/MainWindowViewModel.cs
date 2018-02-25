@@ -357,7 +357,7 @@ namespace Filtration.ViewModels
             catch (Exception e)
             {
                 Logger.Error(e);
-                _messageBoxService.Show("Script Load Error", "Error loading filter script - " + e.Message,
+                _messageBoxService.Show("过滤读取错误", "过滤读取错误 - " + e.Message,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
                 return;
@@ -392,7 +392,7 @@ namespace Filtration.ViewModels
             catch (Exception e)
             {
                 Logger.Error(e);
-                _messageBoxService.Show("Theme Load Error", "Error loading filter theme - " + e.Message,
+                _messageBoxService.Show("样式读取错误", "样式读取错误 - " + e.Message,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
                 return;
@@ -421,14 +421,14 @@ namespace Filtration.ViewModels
                 {
                     Logger.Error(e);
                 }
-                _messageBoxService.Show("Theme Load Error", "Error loading filter theme - " + e.Message,
+                _messageBoxService.Show("样式读取错误", "样式读取错误 - " + e.Message,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
                 return;
             }
 
-            var result = _messageBoxService.Show("Confirm",
-                "Are you sure you wish to apply this theme to the current filter script?", MessageBoxButton.YesNo,
+            var result = _messageBoxService.Show("注意",
+                "请确认使用样式替换当前过滤", MessageBoxButton.YesNo,
                 MessageBoxImage.Question);
             if (result == MessageBoxResult.No)
             {
@@ -465,7 +465,7 @@ namespace Filtration.ViewModels
         {
             var dlg = new FolderBrowserDialog
             {
-                Description = @"Select your Path of Exile data directory, usually in Documents\My Games",
+                Description = @"选择你的POE文档路径, 通常在 我的文档\My Games",
                 ShowNewFolderButton = false
             };
             var result = dlg.ShowDialog();
@@ -504,7 +504,7 @@ namespace Filtration.ViewModels
             }
             catch
             {
-                _messageBoxService.Show("Clipboard Error", "Failed to access the clipboard, copy command not completed.",
+                _messageBoxService.Show("剪贴板错误", "不能访问剪贴板, 复制没有完成",
                     MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }

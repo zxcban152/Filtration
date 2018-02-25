@@ -45,7 +45,7 @@ namespace Filtration.ViewModels
             }
             catch (DirectoryNotFoundException)
             {
-                _messageBoxService.Show("Error", "The entered Default Filter Directory is invalid or does not exist.",
+                _messageBoxService.Show("错误", "默认过滤目录无效或不存在",
                     MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }

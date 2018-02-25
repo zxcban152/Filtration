@@ -140,7 +140,7 @@ namespace Filtration.ThemeEditor.ViewModels
                     Logger.Error(e);
                 }
 
-                _messageBoxService.Show("Save Error", "Error saving filter theme - " + e.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+                _messageBoxService.Show("保存错误", "样式保存错误 - " + e.Message, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -174,7 +174,7 @@ namespace Filtration.ThemeEditor.ViewModels
                     Logger.Error(e);
                 }
 
-                _messageBoxService.Show("Save Error", "Error saving theme file - " + e.Message, MessageBoxButton.OK,
+                _messageBoxService.Show("保存错误", "样式保存错误 - " + e.Message, MessageBoxButton.OK,
                     MessageBoxImage.Error);
                 FilePath = previousFilePath;
             }
@@ -194,7 +194,7 @@ namespace Filtration.ThemeEditor.ViewModels
         
         private void OnAddThemeComponentCommand(ThemeComponentType themeComponentType)
         {
-            Components.Add(new ThemeComponent(themeComponentType, "Untitled Component",
+            Components.Add(new ThemeComponent(themeComponentType, "标签",
                 new Color {A = 255, R = 255, G = 255, B = 255}));
         }
 

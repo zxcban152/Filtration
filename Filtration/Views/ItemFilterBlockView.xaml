@@ -183,7 +183,7 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                                 <Hyperlink Command="{Binding SwitchBlockItemsViewCommand}">
-                                    Switch to Appearance Block Items
+                                    编辑显示样式
                                 </Hyperlink>
                             </TextBlock>
                         
@@ -262,7 +262,7 @@
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                                 <Hyperlink Command="{Binding SwitchBlockItemsViewCommand}">
-                                    Switch to Regular Block Items
+                                    编辑过滤条件
                                 </Hyperlink>
                             </TextBlock>
                             <!-- Add AudioVisual Block Item Links -->
@@ -314,7 +314,7 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0"  Margin="0,0,5,0" Text="Description:" VerticalAlignment="Center" />
+                            <TextBlock Grid.Column="0"  Margin="0,0,5,0" Text="注释:" VerticalAlignment="Center" />
                             <TextBox Grid.Column="1" Text="{Binding BlockDescription}" />
                         </Grid>
                     </Grid>

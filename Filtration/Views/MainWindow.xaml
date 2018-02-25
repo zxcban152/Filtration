@@ -34,7 +34,7 @@
                             <fluent:BackstageTabItem.ContentTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Margin="20">Recent Documents will go here in a future release.</TextBlock>
+                                        <TextBlock Margin="20">近期文件</TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </fluent:BackstageTabItem.ContentTemplate>
@@ -118,7 +118,7 @@
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
             <fluent:RibbonTabItem x:Name="ThemeToolsTabItem" Header="样式工具" Group="{Binding ElementName=ThemeToolsGroup}" Visibility="{Binding ActiveDocumentIsTheme, Converter={StaticResource BooleanVisibilityConverter}, Mode=OneWay}">
-                <fluent:RibbonGroupBox Header="Add Components">
+                <fluent:RibbonGroupBox Header="样式工具">
                     <fluent:Button SizeDefinition="Middle" Header="添加文字颜色" Icon="{StaticResource AddIcon}" Command="{Binding AddTextColorThemeComponentCommand}" />
                     <fluent:Button SizeDefinition="Middle" Header="添加背景颜色" Icon="{StaticResource AddIcon}" Command="{Binding AddBackgroundColorThemeComponentCommand}" />
                     <fluent:Button SizeDefinition="Middle" Header="添加边框颜色" Icon="{StaticResource AddIcon}" Command="{Binding AddBorderColorThemeComponentCommand}" />
@@ -148,7 +148,7 @@
                     </Grid.RowDefinitions>
                     <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1" Background="White" Padding="20">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="DemiBold">Working...</TextBlock>
+                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="DemiBold">工作中...</TextBlock>
                             <Image gif:ImageBehavior.AnimatedSource="/Filtration;component/Resources/loading_spinner.gif" Height="32"  Margin="10,0,0,0"/>
                         </StackPanel>
                     </Border>

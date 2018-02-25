@@ -455,7 +455,7 @@ namespace Filtration.ViewModels
                     Logger.Error(e);
                 }
 
-                _messageBoxService.Show("Save Error", "Error saving filter file - " + e.Message, MessageBoxButton.OK,
+                _messageBoxService.Show("保存错误", "保存错误 - " + e.Message, MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
             finally
@@ -498,7 +498,7 @@ namespace Filtration.ViewModels
                     Logger.Error(e);
                 }
 
-                _messageBoxService.Show("Save Error", "Error saving filter file - " + e.Message, MessageBoxButton.OK,
+                _messageBoxService.Show("保存错误", "保存错误 - " + e.Message, MessageBoxButton.OK,
                     MessageBoxImage.Error);
                 Script.FilePath = previousFilePath;
             }
@@ -521,8 +521,8 @@ namespace Filtration.ViewModels
             var themeComponents = unusedThemeComponents.Aggregate(string.Empty,
                 (current, themeComponent) => current + themeComponent.ComponentName + Environment.NewLine);
 
-            var ignoreUnusedThemeComponents = _messageBoxService.Show("Unused Theme Components",
-                "The following theme components are unused, they will be lost when this script is reopened. Save anyway?" +
+            var ignoreUnusedThemeComponents = _messageBoxService.Show("未使用的样式",
+                "下列样式未使用,当过滤关闭时会丢失，是否保存?" +
                 Environment.NewLine + Environment.NewLine + themeComponents, MessageBoxButton.YesNo,
                 MessageBoxImage.Exclamation);
 
@@ -564,7 +564,7 @@ namespace Filtration.ViewModels
                 failures += failure + Environment.NewLine;
             }
 
-            var messageText = "The following script validation errors occurred:" + Environment.NewLine + failures;
+            var messageText = "下面过滤验证发生错误:" + Environment.NewLine + failures;
 
             _messageBoxService.Show("Script Validation Failure", messageText, MessageBoxButton.OK,
                 MessageBoxImage.Exclamation);
@@ -585,7 +585,7 @@ namespace Filtration.ViewModels
             else
             {
                 var result = _messageBoxService.Show("Filtration",
-                    "Save script \"" + Filename + "\"?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+                    "保存过滤 \"" + Filename + "\"?", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
 
                 switch (result)
                 {
@@ -645,7 +645,7 @@ namespace Filtration.ViewModels
             }
             catch
             {
-                _messageBoxService.Show("Clipboard Error", "Failed to access the clipboard, copy command not completed.", MessageBoxButton.OK, MessageBoxImage.Error);
+                _messageBoxService.Show("剪贴板错误", "复制失败，剪贴板无法访问", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -676,7 +676,7 @@ namespace Filtration.ViewModels
             }
             catch
             {
-                _messageBoxService.Show("Clipboard Error", "Failed to access the clipboard, copy command not completed.",
+                _messageBoxService.Show("剪贴板错误", "复制失败，剪贴板无法访问",
                     MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -724,7 +724,7 @@ namespace Filtration.ViewModels
                 Logger.Error(e);
                 var innerException = e.InnerException?.Message ?? string.Empty;
 
-                _messageBoxService.Show("Paste Error", e.Message + Environment.NewLine + innerException, MessageBoxButton.OK, MessageBoxImage.Error);
+                _messageBoxService.Show("粘贴错误", e.Message + Environment.NewLine + innerException, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
